@@ -31,9 +31,11 @@ function App() {
 	let current = data[index];
 
 	const getWeather = async (units, lat, lon) => {
-		const resp = await axios.get(
-			`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${config.weatherKey}&units=${units}`
-		);
+		// const resp = await axios.get(
+		// 	`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${config.weatherKey}&units=${units}`
+		// );
+		const URL = `/weather?lat=${lat}&lon=${lon}&units=${units}`;
+		const resp = await axios.get(URL);
 		setWeather(resp.data);
 	};
 
