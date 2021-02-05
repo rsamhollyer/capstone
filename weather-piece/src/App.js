@@ -12,7 +12,6 @@ import SpeedGraph from "./Components/SpeedGraph";
 import AltitudeGraph from "./Components/AltitudeGraph";
 import MotorGraph from "./Components/MotorGraph";
 import Map from "./Components/Map";
-import { config } from "./Config/config";
 
 function App() {
 	const [weather, setWeather] = useState(null);
@@ -86,46 +85,14 @@ function App() {
 
 	return (
 		<main className="app">
-			<button
-				style={{ fontSize: "3rem" }}
-				onClick={() => {
-					// if (index < dataLength - 1) {
-					// 	setIndex(index + 1);
-					// 	setSpeedChartData([
-					// 		...speedChartData,
-					// 		{
-					// 			x: data[index].time,
-					// 			y: data[index].speed,
-					// 		},
-					// 	]);
-					// 	setAltChartData([
-					// 		...altChartData,
-					// 		{
-					// 			x: data[index].time,
-					// 			y: data[index].alt,
-					// 		},
-					// 	]);
-					// 	setMotorTempChartData([
-					// 		...motorTempChartData,
-					// 		{
-					// 			x: data[index].time,
-					// 			y: data[index].temp,
-					// 		},
-					// 	]);
-					// 	setMapPoints({
-					// 		lat: data[index].lat,
-					// 		long: data[index].long,
-					// 		key: data[index].time,
-					// 	});
-					// } else {
-					// 	setIndex(0);
-					// }
-				}}
-			>
-				Click Me
-			</button>
 			<Header getWeather={getWeather} data={data} />
-			<FlightPicker getDrones={getDrones} />
+			<FlightPicker
+				getDrones={getDrones}
+				setSpeedChartData={setSpeedChartData}
+				setAltChartData={setAltChartData}
+				setMotorTempChartData={setMotorTempChartData}
+				setIndex={setIndex}
+			/>
 			<Speed current={current} />
 			<Altitude current={current} />
 			<MotorTemp current={current} />
