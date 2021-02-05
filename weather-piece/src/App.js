@@ -8,9 +8,8 @@ import Speed from "./Components/Speed";
 import Altitude from "./Components/Altitude";
 import MotorTemp from "./Components/MotorTemp";
 import FlightDuration from "./Components/FlightDuration";
-import SpeedGraph from "./Components/SpeedGraph";
-import AltitudeGraph from "./Components/AltitudeGraph";
-import MotorGraph from "./Components/MotorGraph";
+
+import GraphComponent from "./Components/GraphComponent";
 import Map from "./Components/Map";
 
 function App() {
@@ -97,9 +96,23 @@ function App() {
 			<Altitude current={current} />
 			<MotorTemp current={current} />
 			<FlightDuration current={current} />
-			<SpeedGraph chartData={speedChartData} />
-			<AltitudeGraph chartData={altChartData} />
-			<MotorGraph chartData={motorTempChartData} />
+
+			<GraphComponent
+				chartData={speedChartData}
+				graphClass={"speed-graph-component"}
+				graphTitle={`Speed Graph`}
+			/>
+			<GraphComponent
+				chartData={altChartData}
+				graphClass={"alt-graph-comp"}
+				graphTitle={`Alt. Graph`}
+			/>
+			<GraphComponent
+				chartData={motorTempChartData}
+				graphClass={"motor-graph-component"}
+				graphTitle={`Motor Graph Comp.`}
+			/>
+
 			<Map data={data} mapPoints={mapPoints} />
 			<Weather weather={weather} />
 		</main>
