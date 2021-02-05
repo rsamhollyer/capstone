@@ -3,7 +3,7 @@ const FlightDuration = (props) => {
 	return (
 		<div className="flight-duration-component single-stat-panel">
 			<div className="text-area">
-				<h3 className="component-header">Flight Duration</h3>
+				<h3 className="component-header">FLIGHT DURATION</h3>
 				<h2
 					className="read-out-info"
 					style={{ color: "hsla(212, 100%, 35%, 1)" }}

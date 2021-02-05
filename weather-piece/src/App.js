@@ -4,11 +4,8 @@ import axios from "axios";
 import { Weather } from "./Components/Weather";
 import Header from "./Components/Header";
 import FlightPicker from "./Components/FlightPicker";
-import Speed from "./Components/Speed";
-import Altitude from "./Components/Altitude";
-import MotorTemp from "./Components/MotorTemp";
 import FlightDuration from "./Components/FlightDuration";
-
+import SingleStat from "./Components/SingleStat";
 import GraphComponent from "./Components/GraphComponent";
 import Map from "./Components/Map";
 
@@ -92,9 +89,40 @@ function App() {
 				setMotorTempChartData={setMotorTempChartData}
 				setIndex={setIndex}
 			/>
-			<Speed current={current} />
-			<Altitude current={current} />
-			<MotorTemp current={current} />
+			<SingleStat
+				current={current}
+				stat={`speed`}
+				type={`speed`}
+				good={0.5}
+				caution={0.8}
+				danger={1}
+				className={"speed-component"}
+				units={`FT/S`}
+				fa={"fa-tachometer-alt"}
+			/>
+			<SingleStat
+				current={current}
+				stat={`alt`}
+				type={`altitude`}
+				good={300}
+				caution={250}
+				danger={50}
+				className={"altitude-component"}
+				units={`feet`}
+				fa={"fa-plane-departure"}
+			/>
+			<SingleStat
+				current={current}
+				stat={`temp`}
+				type={`Motor Temperature`}
+				good={135}
+				caution={150}
+				danger={180}
+				className={"motor-temp-component"}
+				units={`°F`}
+				fa={"fa-fire"}
+			/>
+
 			<FlightDuration current={current} />
 
 			<GraphComponent
