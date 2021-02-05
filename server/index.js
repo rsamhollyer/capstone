@@ -15,6 +15,9 @@ const bodyParser = require("body-parser");
 const favicon = require("serve-favicon");
 const path = require("path");
 
+//Routers
+const { weatherRouter } = require("./routers");
+
 //Fav-Icon
 app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 app.use(bodyParser.json());
@@ -34,7 +37,7 @@ app.get("/", (req, res) => {
 	res.send(`Hi Express`);
 });
 
-app.use("/weather", weatherRouter);
+app.use("/api/weather", weatherRouter);
 
 server.listen(PORT, HOST, () => {
 	console.log(`Listening on http://${HOST}:${PORT}`);
