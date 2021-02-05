@@ -42,8 +42,8 @@ export default function SingleStat(props) {
 			color = "caution";
 			background = "caution-background";
 		} else {
-			color = "good";
-			background = "good-background";
+			color = "danger";
+			background = "danger-background";
 		}
 	}
 
