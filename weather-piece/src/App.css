@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+:root {
+	--app_bg: hsla(0, 0%, 11%, 1);
+	--comp_bg: hsla(0, 0%, 15.5%, 1);
+	--border-radius: 7px;
+	--box-shadow: 5px 3px 5px 1px #181616;
+	--icon-background: hsla(0, 0%, 20%, 1);
+	--good_color: hsla(95, 100%, 32%, 1);
+	--caution_color: hsla(60, 100%, 32%, 1);
+	--danger_color: hsla(0, 100%, 47%, 1);
+}
+
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100vw;
+	min-height: 100vh;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 62.5%;
+	color: #808080;
+}
+
+h2 h3 {
+	font-weight: 400;
+}
+
+.app {
+	display: grid;
+	grid-template-columns: 10px repeat(4, 1fr) 10px;
+	grid-template-rows: 10px 35px 35px 58px repeat(2, 1fr) 10px;
+	grid-template-areas:
+		". . . . . . "
+		". header header header header ."
+		". picker picker picker picker ."
+		". speed altitude temp duration ."
+		". map map speedgraph altgraph ."
+		". map map motortemp weather ."
+		". . . . . . ";
+
+	width: 100%;
+	height: 100vh;
+	background-color: var(--app_bg);
+	gap: 1.5rem;
+}
+
+.header-component {
+	grid-area: header;
+	background-color: var(--comp_bg);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 15px;
+}
+.picker-component {
+	grid-area: picker;
+	background-color: var(--comp_bg);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 15px;
+}
+
+.date-time {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1rem;
+}
+.date {
+	padding: 0 5px;
+}
+
+.time {
+	padding-left: 10px;
+}
+
+.speed-component {
+	grid-area: speed;
+	background-color: var(--comp_bg);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+}
+
+.single-stat-panel {
+	display: flex;
+	justify-content: space-between;
+	overflow: hidden;
+}
+
+.text-area {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-left: 15px;
+}
+
+.text-area span {
+	font-size: 1rem;
+	font-weight: 300;
+}
+
+.component-header {
+	margin-top: 10px;
+}
+
+.read-out-info {
+	margin-bottom: 10px;
+	font-size: 1.9rem;
+}
+
+.good {
+	color: var(--good_color) !important;
+}
+
+.good-background {
+	background-color: var(--good_color) !important;
+}
+
+.caution {
+	color: var(--caution_color) !important;
+}
+
+.caution-background {
+	background-color: var(--caution_color) !important;
+}
+.danger {
+	color: var(--danger_color) !important;
+}
+.danger-background {
+	background-color: var(--danger_color) !important;
+}
+.icon-area {
+	display: flex;
+	align-items: center;
+	padding: 18px;
+	background-color: var(--icon-background);
+}
+.component-icon {
+	font-size: 1.8rem;
+	color: white !important;
+}
+
+.altitude-component {
+	grid-area: altitude;
+	border-radius: var(--border-radius);
+	background-color: var(--comp_bg);
+	box-shadow: var(--box-shadow);
+}
+
+.motor-temp-component {
+	grid-area: temp;
+	background-color: var(--comp_bg);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+}
+.flight-duration-component {
+	grid-area: duration;
+	background-color: var(--comp_bg);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+}
+.weather-component {
+	grid-area: weather;
+	background-color: var(--comp_bg);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+}
+
+.weather-body {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+
+.weather-name {
+	margin: 5px;
+}
+
+.city-name {
+	font-size: 1rem;
+	font-weight: 300;
+}
+
+.weather-info {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.weather-icon {
+	font-size: 3.5rem;
+}
+
+.current-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.current-info h2 {
+	font-size: 1.7rem;
+	font-weight: normal;
+}
+
+.temp-extremes {
+	display: flex;
+	justify-content: space-between;
+}
+
+.temp-extremes h4 {
+	padding: 5px;
+}
+
+.other-weather {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 10px;
+}
+
+.small-weather-panel {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.small-weather-panel i {
+	font-size: 1.5rem;
+}
+
+.speed-graph-component {
+	grid-area: speedgraph;
+	background-color: var(--comp_bg);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+}
+
+.map-component {
+	grid-area: map;
+	background-color: var(--comp_bg);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.marker-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+.marker-btn img {
+	width: 20px;
+	height: 20px;
+}
+
+.motor-graph-component {
+	grid-area: motortemp;
+	background-color: var(--comp_bg);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+}
+
+.alt-graph-comp {
+	grid-area: altgraph;
+	background-color: var(--comp_bg);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+}
