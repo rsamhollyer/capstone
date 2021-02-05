@@ -16,7 +16,7 @@ const favicon = require("serve-favicon");
 const path = require("path");
 
 //Routers
-const { weatherRouter } = require("./routers");
+const { weatherRouter, droneRouter } = require("./routers");
 
 //Fav-Icon
 app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
@@ -38,6 +38,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/weather", weatherRouter);
+app.use("/api/drones", droneRouter);
 
 server.listen(PORT, HOST, () => {
 	console.log(`Listening on http://${HOST}:${PORT}`);
