@@ -25,17 +25,14 @@ function App() {
 	const [index, setIndex] = useState(0);
 	const [mapPoints, setMapPoints] = useState({});
 
-	const [isFlying, setFlying] = useState(false);
-
 	let dataLength = data.length;
 	let current = data[index];
 
 	const getWeather = async (units, lat, lon) => {
-		// const resp = await axios.get(
-		// 	`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${config.weatherKey}&units=${units}`
-		// );
-		const URL = `/weather?lat=${lat}&lon=${lon}&units=${units}`;
-		const resp = await axios.get(URL);
+		const URL = `/api/weather`;
+		const resp = await axios.get(URL, {
+			params: { lat, lon, units },
+		});
 		setWeather(resp.data);
 	};
 
@@ -112,7 +109,6 @@ function App() {
 			<button
 				style={{ fontSize: "3rem" }}
 				onClick={() => {
-					setFlying(true);
 					// if (index < dataLength - 1) {
 					// 	setIndex(index + 1);
 					// 	setSpeedChartData([
