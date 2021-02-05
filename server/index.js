@@ -1,6 +1,4 @@
 require("dotenv").config();
-//Getting needed files from
-const { WEATHER_KEY, MAP_KEY } = process.env;
 
 // Getting Express ready
 const http = require("http");
@@ -9,7 +7,6 @@ const app = express();
 const morgan = require("morgan");
 const server = http.createServer(app);
 const logger = morgan("dev");
-const axios = require("axios");
 const PORT = 9999;
 const HOST = "localhost";
 
@@ -36,6 +33,8 @@ app.use(logger);
 app.get("/", (req, res) => {
 	res.send(`Hi Express`);
 });
+
+app.use("/weather", weatherRouter);
 
 server.listen(PORT, HOST, () => {
 	console.log(`Listening on http://${HOST}:${PORT}`);
