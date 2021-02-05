@@ -36,32 +36,12 @@ function App() {
 		setWeather(resp.data);
 	};
 
-	const getData = async (drone) => {
-		let url;
-		switch (drone) {
-			case 1:
-				url = "data/2013_04_14_merlischachen.kml.json";
-				break;
-
-			case 2:
-				url = "data/2014_08_21_rtk_vrs_2.5cm_fact2.5.kml.json";
-				break;
-
-			case 3:
-				url = "data/aletsch_27_10_vrs_ppk.kml.json";
-				break;
-
-			case 4:
-				url = "data/corridor_orient.kml.json";
-				break;
-
-			case 5:
-				url = "data/EP-00-00012_0119.kml.json";
-				break;
-			default:
-				return;
-		}
-		const resp = await axios.get(url);
+	const getDrones = async (drone) => {
+		const URL = "/api/drones";
+		console.log(URL);
+		const resp = await axios.get(URL, {
+			params: { drone },
+		});
 		setData(resp.data);
 	};
 
@@ -145,7 +125,7 @@ function App() {
 				Click Me
 			</button>
 			<Header getWeather={getWeather} data={data} />
-			<FlightPicker getData={getData} />
+			<FlightPicker getDrones={getDrones} />
 			<Speed current={current} />
 			<Altitude current={current} />
 			<MotorTemp current={current} />
