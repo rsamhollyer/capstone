@@ -116,6 +116,11 @@ h2 h3 {
 	color: white !important;
 }
 
+.active {
+	background-color: var(--accent_color);
+	color: white;
+}
+
 .date-time {
 	display: flex;
 	justify-content: space-between;
