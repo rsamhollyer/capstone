@@ -9,7 +9,7 @@
 	--good_color: hsla(95, 100%, 32%, 1);
 	--caution_color: hsla(60, 100%, 32%, 1);
 	--danger_color: hsla(0, 100%, 47%, 1);
-	--button_color: hsla(334, 0%, 15%, 1);
+	--button_color: hsla(0, 0%, 23.5%, 1);
 	--accent_color: hsla(334, 0%, 33%, 1);
 }
 
@@ -23,8 +23,6 @@
 
 html,
 body {
-	width: 100vw;
-	min-height: 100vh;
 	font-family: "Ubuntu", sans-serif;
 	font-size: 62.5%;
 	color: #808080;
@@ -46,9 +44,7 @@ h2 h3 {
 		". map map speedgraph altgraph ."
 		". map map motortemp weather ."
 		". . . . . . ";
-
 	width: 100%;
-
 	height: 100%;
 	background-color: var(--app_bg);
 	gap: 1.5rem;
@@ -76,14 +72,15 @@ h2 h3 {
 }
 
 .flight-button {
-	background-color: var(--button_color);
-	color: black;
+	background-color: hsla(0, 0%, 19%, 1);
+	color: #808080;
+	box-shadow: 2px 1px 2px 0px #201d16;
 	font-size: 1rem;
-	border-radius: 50%;
+	border-radius: 15px;
 	position: relative;
 	cursor: pointer;
 	padding: 5px;
-
+	border: none;
 	outline: none;
 }
 
@@ -97,9 +94,9 @@ h2 h3 {
 	z-index: -1;
 	background-color: var(--accent_color);
 	transform: scaleX(0);
-	transition: transform 300ms ease-in-out;
+	transition: transform 200ms ease-in-out;
 	transform-origin: center;
-	border-radius: 50%;
+	border-radius: 15px;
 }
 
 .flight-button.flight-button-slide:hover::before,
@@ -117,7 +114,7 @@ h2 h3 {
 }
 
 .active {
-	background-color: var(--accent_color);
+	background-color: hsla(212, 100%, 35%, 1);
 	color: white;
 }
 

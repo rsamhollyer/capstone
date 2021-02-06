@@ -10,6 +10,7 @@ import GraphComponent from "./Components/GraphComponent";
 import Map from "./Components/Map";
 
 function App() {
+	const [activeDrone, setActiveDrone] = useState();
 	const [weather, setWeather] = useState(null);
 	const [data, setData] = useState([]);
 	const [speedChartData, setSpeedChartData] = useState([{ x: 0, y: 0 }]);
@@ -33,10 +34,10 @@ function App() {
 
 	const getDrones = async (drone) => {
 		const URL = "/api/drones";
-		console.log(URL);
 		const resp = await axios.get(URL, {
 			params: { drone },
 		});
+		setActiveDrone(drone);
 		setData(resp.data);
 	};
 
@@ -88,6 +89,7 @@ function App() {
 				setAltChartData={setAltChartData}
 				setMotorTempChartData={setMotorTempChartData}
 				setIndex={setIndex}
+				activeDrone={activeDrone}
 			/>
 			<SingleStat
 				current={current}
