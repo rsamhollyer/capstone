@@ -1,4 +1,5 @@
 import FlightPickerButton from "./FlightPickerButton";
+import { useState } from "react";
 
 export default function FlightPicker(props) {
 	const {
@@ -7,7 +8,9 @@ export default function FlightPicker(props) {
 		setAltChartData,
 		setMotorTempChartData,
 		setIndex,
+		activeDrone,
 	} = props;
+
 	return (
 		<div className="picker-component">
 			<FlightPickerButton
@@ -17,6 +20,7 @@ export default function FlightPicker(props) {
 				setMotorTempChartData={setMotorTempChartData}
 				setIndex={setIndex}
 				droneNumber={1}
+				activeDrone={activeDrone}
 			/>
 			<FlightPickerButton
 				getDrones={getDrones}
@@ -25,6 +29,7 @@ export default function FlightPicker(props) {
 				setMotorTempChartData={setMotorTempChartData}
 				setIndex={setIndex}
 				droneNumber={2}
+				activeDrone={activeDrone}
 			/>
 			<FlightPickerButton
 				getDrones={getDrones}
@@ -33,6 +38,7 @@ export default function FlightPicker(props) {
 				setMotorTempChartData={setMotorTempChartData}
 				setIndex={setIndex}
 				droneNumber={3}
+				activeDrone={activeDrone}
 			/>
 			<FlightPickerButton
 				getDrones={getDrones}
@@ -41,6 +47,7 @@ export default function FlightPicker(props) {
 				setMotorTempChartData={setMotorTempChartData}
 				setIndex={setIndex}
 				droneNumber={4}
+				activeDrone={activeDrone}
 			/>
 			<FlightPickerButton
 				getDrones={getDrones}
@@ -49,6 +56,7 @@ export default function FlightPicker(props) {
 				setMotorTempChartData={setMotorTempChartData}
 				setIndex={setIndex}
 				droneNumber={5}
+				activeDrone={activeDrone}
 			/>
 		</div>
 	);
