@@ -9,6 +9,7 @@ export default function FlightPickerButton(props) {
 	} = props;
 	return (
 		<button
+			className="flight-button"
 			onClick={() => {
 				getDrones(droneNumber);
 				setSpeedChartData([{ x: 0, y: 0 }]);
