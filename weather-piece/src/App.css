@@ -34,8 +34,8 @@ h2 h3 {
 
 .app {
 	display: grid;
-	grid-template-columns: 10px repeat(4, 1fr) 10px;
-	grid-template-rows: 10px 35px 35px 58px repeat(2, 1fr) 10px;
+	grid-template-columns: 0.5rem repeat(4, 1fr) 0.5rem;
+	grid-template-rows: 0.5rem 3.5rem 3.5rem 58px repeat(2, 1fr) 0.5rem;
 	grid-template-areas:
 		". . . . . . "
 		". header header header header ."
@@ -46,7 +46,8 @@ h2 h3 {
 		". . . . . . ";
 
 	width: 100%;
-	height: 100vh;
+
+	height: 100%;
 	background-color: var(--app_bg);
 	gap: 1.5rem;
 }
@@ -72,7 +73,7 @@ h2 h3 {
 	padding: 0 15px;
 }
 
-.picker-component button {
+.flight-button {
 	border-radius: 5px;
 	box-shadow: var(--box-shadow);
 }
@@ -101,7 +102,6 @@ h2 h3 {
 .single-stat-panel {
 	display: flex;
 	justify-content: space-between;
-	overflow: hidden;
 }
 
 .text-area {
@@ -151,9 +151,10 @@ h2 h3 {
 	align-items: center;
 	padding: 18px;
 	background-color: var(--icon-background);
+	border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 .component-icon {
-	font-size: 1.8rem;
+	font-size: 1.3rem;
 	color: white !important;
 }
 
