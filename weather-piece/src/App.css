@@ -9,6 +9,8 @@
 	--good_color: hsla(95, 100%, 32%, 1);
 	--caution_color: hsla(60, 100%, 32%, 1);
 	--danger_color: hsla(0, 100%, 47%, 1);
+	--button_color: hsla(334, 0%, 15%, 1);
+	--accent_color: hsla(334, 0%, 33%, 1);
 }
 
 *,
@@ -74,8 +76,44 @@ h2 h3 {
 }
 
 .flight-button {
-	border-radius: 5px;
-	box-shadow: var(--box-shadow);
+	background-color: var(--button_color);
+	color: black;
+	font-size: 1rem;
+	border-radius: 50%;
+	position: relative;
+	cursor: pointer;
+	padding: 5px;
+
+	outline: none;
+}
+
+.flight-button.flight-button-slide::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+	background-color: var(--accent_color);
+	transform: scaleX(0);
+	transition: transform 300ms ease-in-out;
+	transform-origin: center;
+	border-radius: 50%;
+}
+
+.flight-button.flight-button-slide:hover::before,
+.flight-button.flight-button-slide:focus::before {
+	transform: scaleX(1);
+}
+
+.flight-button.flight-button-slide {
+	transition: color 300ms ease-in-out;
+	z-index: 1;
+}
+.flight-button.flight-button-slide:hover,
+.flight-button.flight-button-slide:focus {
+	color: white !important;
 }
 
 .date-time {
