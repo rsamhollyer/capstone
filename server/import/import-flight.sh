@@ -2,6 +2,6 @@
 
 for f in *.json
 do
-	node importRecipe.js ./$f
+	node importflights.js ./$f
 done
 
