@@ -10,7 +10,7 @@ const Header = (props) => {
 	}, [data]);
 	return (
 		<div className="header-component">
-			<h1>Drone Flight Recorder</h1>
+			<h1>Drone Dash</h1>
 
 			<div className="date-time">
 				<Moment className="date" format="DD/MM/YYYY" />

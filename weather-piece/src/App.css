@@ -49,7 +49,9 @@ h2 h3 {
 	background-color: var(--app_bg);
 	gap: 1.5rem;
 }
-
+.align-center {
+	text-align: center;
+}
 .header-component {
 	grid-area: header;
 	background-color: var(--comp_bg);

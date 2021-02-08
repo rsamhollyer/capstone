@@ -16,7 +16,7 @@ export default function GraphComponent(props) {
 	}, []);
 
 	return (
-		<div className={`${graphClass}`}>
+		<div className={`${graphClass} align-center`}>
 			<h2>{graphTitle}</h2>
 			<VictoryChart
 				theme={VictoryTheme.material}
