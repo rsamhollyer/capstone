@@ -11,6 +11,7 @@ export default function WeatherIcon(props) {
 						<i
 							style={{ color: "hsla(209, 71%, 19%, 1)" }}
 							className="fas fa-poo-storm"
+							//img - src = public -omitted /icons/somethingimage.png
 						></i>
 					),
 					Drizzle: (
@@ -92,10 +93,18 @@ export default function WeatherIcon(props) {
 						></i>
 					),
 					Clouds: (
-						<i
-							style={{ color: "hsla(224, 0%, 15%, 1)" }}
-							className="fas fa-cloud"
-						></i>
+						// <i
+						// 	style={{ color: "hsla(224, 0%, 15%, 1)" }}
+						// 	className="fas fa-cloud"
+						// ></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/clouds.svg"
+							alt="Clouds"
+						/>
 					),
 				}[main]
 			}

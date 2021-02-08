@@ -28,6 +28,7 @@ export default function FlightPicker(props) {
 				? droneNames.map((drone) => {
 						return (
 							<FlightPickerButton
+								key={drone.droneName}
 								getDrones={getDrones}
 								setSpeedChartData={setSpeedChartData}
 								setAltChartData={setAltChartData}

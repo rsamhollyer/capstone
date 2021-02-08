@@ -4,6 +4,10 @@ import { useState, useEffect } from "react";
 
 const Map = (props) => {
 	const { data, mapPoints } = props;
+	const [mapStyle, setMapStyle] = useState(
+		"mapbox://styles/rsamhollyer/ckkprmd573gmw17mlcncjk8bz"
+	);
+
 	const [viewport, setViewport] = useState({
 		latitude: 29.910577,
 		longitude: -95.060882,
@@ -21,11 +25,13 @@ const Map = (props) => {
 		}
 	}, [data]);
 
-	// console.log(mapPoints);
 	return (
 		<div className="map-component">
+			<div className="header">
+				<h2>Drone Position</h2>
+			</div>
 			<ReactMapGL
-				mapStyle="mapbox://styles/rsamhollyer/ckkprmd573gmw17mlcncjk8bz"
+				mapStyle={mapStyle}
 				mapboxApiAccessToken={config.mapBox}
 				{...viewport}
 				onViewportChange={(nextViewport) => {
@@ -46,6 +52,38 @@ const Map = (props) => {
 					</Marker>
 				)}
 			</ReactMapGL>
+			<div className="footer">
+				<button
+					key={1}
+					onClick={() => {
+						setMapStyle(
+							"mapbox://styles/rsamhollyer/ckkprmd573gmw17mlcncjk8bz"
+						);
+					}}
+				>
+					Click Me
+				</button>
+				<button
+					key={2}
+					onClick={() => {
+						setMapStyle(
+							"mapbox://styles/rsamhollyer/ckkprljfz7xoi17mjo6asbeub"
+						);
+					}}
+				>
+					Click Me
+				</button>
+				<button
+					key={3}
+					onClick={() => {
+						setMapStyle(
+							"mapbox://styles/rsamhollyer/ckkn1mivy5aml17mnueua6ovj"
+						);
+					}}
+				>
+					Click Me
+				</button>
+			</div>
 		</div>
 	);
 };

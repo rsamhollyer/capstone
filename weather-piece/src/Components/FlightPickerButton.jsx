@@ -11,7 +11,6 @@ export default function FlightPickerButton(props) {
 
 	return (
 		<button
-			key={droneName}
 			className={
 				droneName === activeDrone
 					? `flight-button flight-button-slide active`

@@ -12,7 +12,6 @@ import Map from "./Components/Map";
 function App() {
 	const [activeDrone, setActiveDrone] = useState();
 	const [weather, setWeather] = useState(null);
-	const [data, setData] = useState([]);
 	const [speedChartData, setSpeedChartData] = useState([{ x: 0, y: 0 }]);
 	const [altChartData, setAltChartData] = useState([{ x: 0, y: 0 }]);
 	const [motorTempChartData, setMotorTempChartData] = useState([
@@ -20,6 +19,7 @@ function App() {
 	]);
 	const [index, setIndex] = useState(0);
 	const [mapPoints, setMapPoints] = useState({});
+	const [data, setData] = useState([]);
 
 	let dataLength = data.length;
 	let current = data[index];
@@ -91,6 +91,7 @@ function App() {
 				setIndex={setIndex}
 				activeDrone={activeDrone}
 			/>
+
 			<SingleStat
 				current={current}
 				stat={`speed`}
@@ -102,6 +103,7 @@ function App() {
 				units={`FT/S`}
 				fa={"fa-tachometer-alt"}
 			/>
+
 			<SingleStat
 				current={current}
 				stat={`alt`}
