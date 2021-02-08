@@ -2,7 +2,7 @@ const getDrones = (req, res) => {
 	let { drone } = req.query;
 	drone = parseInt(drone);
 
-	let droneData = "something";
+	let droneData = "";
 
 	switch (drone) {
 		case 1:
