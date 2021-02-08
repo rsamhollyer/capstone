@@ -1,3 +1,20 @@
+const Sequelize = require("sequelize");
+const { Flightdata } = require("../models");
+
+const getDroneNames = async (req, res) => {
+	try {
+		const names = await Flightdata.findAll({
+			attributes: [
+				[Sequelize.fn("DISTINCT", Sequelize.col("droneName")), "droneName"],
+			],
+			order: [["droneName", "ASC"]],
+		});
+		res.json(names);
+	} catch (e) {
+		res.json(e);
+	}
+};
+
 const getDrones = (req, res) => {
 	let { drone } = req.query;
 	drone = parseInt(drone);
@@ -34,4 +51,5 @@ const getDrones = (req, res) => {
 
 module.exports = {
 	getDrones,
+	getDroneNames,
 };

@@ -33,7 +33,7 @@ function App() {
 	};
 
 	const getDrones = async (drone) => {
-		const URL = "/api/drones";
+		const URL = "/api/drones/getdrones";
 		const resp = await axios.get(URL, {
 			params: { drone },
 		});

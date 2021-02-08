@@ -1,5 +1,6 @@
 import FlightPickerButton from "./FlightPickerButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function FlightPicker(props) {
 	const {
@@ -10,6 +11,15 @@ export default function FlightPicker(props) {
 		setIndex,
 		activeDrone,
 	} = props;
+
+	const getDroneNames = async () => {
+		const resp = await axios.get("api/drones/dronenames");
+		console.log(resp.data);
+	};
+
+	useEffect(() => {
+		getDroneNames();
+	}, []);
 
 	return (
 		<div className="picker-component">
