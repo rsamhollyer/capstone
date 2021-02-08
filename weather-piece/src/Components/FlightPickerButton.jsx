@@ -5,26 +5,27 @@ export default function FlightPickerButton(props) {
 		setAltChartData,
 		setMotorTempChartData,
 		setIndex,
-		droneNumber,
+		droneName,
 		activeDrone,
 	} = props;
 
 	return (
 		<button
+			key={droneName}
 			className={
-				droneNumber === activeDrone
+				droneName === activeDrone
 					? `flight-button flight-button-slide active`
 					: `flight-button flight-button-slide`
 			}
 			onClick={() => {
-				getDrones(droneNumber);
+				getDrones(droneName);
 				setSpeedChartData([{ x: 0, y: 0 }]);
 				setAltChartData([{ x: 0, y: 0 }]);
 				setMotorTempChartData([{ x: 0, y: 0 }]);
 				setIndex(0);
 			}}
 		>
-			<span>Drone {droneNumber}</span>
+			<span>{droneName}</span>
 		</button>
 	);
 }
