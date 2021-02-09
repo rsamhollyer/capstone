@@ -1,12 +1,14 @@
 import ReactMapGL, { Marker, Layer } from "react-map-gl";
+// import MapStyleButton from "./MapStyleButton";
 import { config } from "../Config/config";
 import { useState, useEffect } from "react";
 
 const Map = (props) => {
-	const { data, mapPoints } = props;
+	const [activeStyle, setActiveStyle] = useState("Monochrome");
 	const [mapStyle, setMapStyle] = useState(
 		"mapbox://styles/rsamhollyer/ckkprmd573gmw17mlcncjk8bz"
 	);
+	const { data, mapPoints } = props;
 
 	const [viewport, setViewport] = useState({
 		latitude: 29.910577,
@@ -54,35 +56,76 @@ const Map = (props) => {
 			</ReactMapGL>
 			<div className="footer">
 				<button
-					key={1}
+					className={
+						"Monochrome" === activeStyle
+							? `flight-button flight-button-slide active`
+							: `flight-button flight-button-slide`
+					}
 					onClick={() => {
 						setMapStyle(
 							"mapbox://styles/rsamhollyer/ckkprmd573gmw17mlcncjk8bz"
 						);
+						setActiveStyle("Monochrome");
 					}}
 				>
-					Click Me
+					Monochrome
 				</button>
+
 				<button
-					key={2}
+					className={
+						"Satellite" === activeStyle
+							? `flight-button flight-button-slide active`
+							: `flight-button flight-button-slide`
+					}
 					onClick={() => {
 						setMapStyle(
 							"mapbox://styles/rsamhollyer/ckkprljfz7xoi17mjo6asbeub"
 						);
+						setActiveStyle("Satellite");
 					}}
 				>
-					Click Me
+					Satellite
 				</button>
+
 				<button
-					key={3}
+					className={
+						"Outdoors" === activeStyle
+							? `flight-button flight-button-slide active`
+							: `flight-button flight-button-slide`
+					}
 					onClick={() => {
 						setMapStyle(
 							"mapbox://styles/rsamhollyer/ckkn1mivy5aml17mnueua6ovj"
 						);
+						setActiveStyle("Outdoors");
 					}}
 				>
-					Click Me
+					Outdoors
 				</button>
+				{/* <MapStyleButton
+					key={1}
+					stylename={"Monochrone"}
+					stylelink={"mapbox://styles/rsamhollyer/ckkprmd573gmw17mlcncjk8bz"}
+					setMapStyle={setMapStyle}
+					setActiveStyle={setActiveStyle}
+					activeStyle={activeStyle}
+				/>
+				<MapStyleButton
+					key={2}
+					stylename={"Satellite"}
+					stylelink={"mapbox://styles/rsamhollyer/ckkprljfz7xoi17mjo6asbeub"}
+					setMapStyle={setMapStyle}
+					setActiveStyle={setActiveStyle}
+					activeStyle={activeStyle}
+				/>
+				<MapStyleButton
+					key={3}
+					stylename={"Outdoors"}
+					stylelink={"mapbox://styles/rsamhollyer/ckkn1mivy5aml17mnueua6ovj"}
+					setMapStyle={setMapStyle}
+					setActiveStyle={setActiveStyle}
+					activeStyle={activeStyle}
+				/> */}
 			</div>
 		</div>
 	);
