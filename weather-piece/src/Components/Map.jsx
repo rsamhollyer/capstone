@@ -29,9 +29,10 @@ const Map = (props) => {
 
 	return (
 		<div className="map-component">
-			<div className="header">
+			<div className="heading">
 				<h2>Drone Position</h2>
 			</div>
+
 			<ReactMapGL
 				mapStyle={mapStyle}
 				mapboxApiAccessToken={config.mapBox}

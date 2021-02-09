@@ -26,6 +26,7 @@ body {
 	font-family: "Ubuntu", sans-serif;
 	font-size: 62.5%;
 	color: #808080;
+	height: 100vh;
 }
 
 h2 h3 {
@@ -45,13 +46,11 @@ h2 h3 {
 		". map map motortemp weather ."
 		". . . . . . ";
 	width: 100%;
-	height: 100%;
+
 	background-color: var(--app_bg);
 	gap: 1.5rem;
 }
-.align-center {
-	text-align: center;
-}
+
 .header-component {
 	grid-area: header;
 	background-color: var(--comp_bg);
@@ -84,6 +83,11 @@ h2 h3 {
 	padding: 5px;
 	border: none;
 	outline: none;
+}
+
+.heading {
+	padding-left: 5%;
+	width: 100%;
 }
 
 .flight-button.flight-button-slide::before {
@@ -338,4 +342,25 @@ h2 h3 {
 	background-color: var(--comp_bg);
 	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow);
+}
+
+@media only screen and (max-width: 769px) {
+	.app {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 10px 28px 28px 50px 50px 400px 180px 180px 10px;
+		grid-template-areas:
+			". . "
+			"header header"
+			"picker picker "
+			"duration speed "
+			"altitude temp "
+			"map map "
+			"speedgraph weather "
+			"motortemp altgraph "
+			" . .";
+
+		width: 100%;
+		background-color: var(--app_bg);
+		gap: 1.5rem;
+	}
 }

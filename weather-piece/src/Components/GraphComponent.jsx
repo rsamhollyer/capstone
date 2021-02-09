@@ -16,8 +16,10 @@ export default function GraphComponent(props) {
 	}, []);
 
 	return (
-		<div className={`${graphClass} align-center`}>
-			<h2>{graphTitle}</h2>
+		<div className={`${graphClass}`}>
+			<div className="heading">
+				<h2>{graphTitle}</h2>
+			</div>
 			<VictoryChart
 				theme={VictoryTheme.material}
 				domain={{ x: [0, 500], y: [0, `${domain}`] }}
