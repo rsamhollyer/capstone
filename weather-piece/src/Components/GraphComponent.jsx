@@ -22,7 +22,7 @@ export default function GraphComponent(props) {
 			</div>
 			<VictoryChart
 				theme={VictoryTheme.material}
-				domain={{ x: [0, 500], y: [0, `${domain}`] }}
+				domain={{ x: [0, 800], y: [0, `${domain}`] }}
 			>
 				<VictoryLine
 					style={{
