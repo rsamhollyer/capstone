@@ -8,95 +8,146 @@ export default function WeatherIcon(props) {
 			{
 				{
 					Thunderstorm: (
-						<i
-							style={{ color: "hsla(209, 71%, 19%, 1)" }}
-							className="fas fa-poo-storm"
-							//img - src = public -omitted /icons/somethingimage.png
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/thunderstorm.svg"
+							alt="Clouds"
+						/>
 					),
 					Drizzle: (
-						<i
-							style={{ color: "hsla(209, 54%, 41%, 1)" }}
-							className="fas fa-cloud-rain"
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/drizzle.svg"
+							alt="Clouds"
+						/>
 					),
 					Rain: (
-						<i
-							style={{ color: "hsla(209, 54%, 26%, 1)" }}
-							className="fas fa-cloud-showers-heavy"
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/rain.svg"
+							alt="Clouds"
+						/>
 					),
 					Snow: (
-						<i
-							style={{ color: "hsla(255, 84%, 68%, 1)" }}
-							className="far fa-snowflake"
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/snow.svg"
+							alt="Clouds"
+						/>
 					),
 					Mist: (
-						<i
-							style={{ color: "hsla(210, 33%, 33%, 1)" }}
-							className="fas fa-smog"
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/mist.svg"
+							alt="Clouds"
+						/>
 					),
 					Smoke: (
-						<i
-							style={{ color: "hsla(306, 4%, 19%, 1)" }}
-							className="fas fa-smog"
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/smoke.svg"
+							alt="Clouds"
+						/>
 					),
 					Haze: (
-						<i
-							style={{ color: "hsla(306, 4%, 19%, 1)" }}
-							className="fas fa-smog"
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/mist.svg"
+							alt="Clouds"
+						/>
 					),
 					Dust: (
-						<i
-							style={{ color: "hsla(53, 71%, 75%, 1)" }}
-							className="fas fa-smog"
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/smoke.svg"
+							alt="Clouds"
+						/>
 					),
 					Fog: (
-						<i
-							style={{ color: "hsla(306, 4%, 19%, 1)" }}
-							className="fas fa-smog"
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/mist.svg"
+							alt="Clouds"
+						/>
 					),
 					Sand: (
-						<i
-							style={{ color: "hsla(53, 71%, 75%, 1)" }}
-							className="fas fa-smog"
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/smoke.svg"
+							alt="Clouds"
+						/>
 					),
 					Ash: (
-						<i
-							style={{ color: "hsla(306, 4%, 19%, 1)" }}
-							className="fas fa-smog"
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/smoke.svg"
+							alt="Clouds"
+						/>
 					),
 					Squall: (
-						<i
-							style={{ color: "hsla(199, 95%, 71%, 1)" }}
-							className="fas fa-wind"
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/squall.svg"
+							alt="Clouds"
+						/>
 					),
 					Tornado: (
-						<i
-							style={{ color: "hsla(0, 85%, 25%, 1)" }}
-							className="fas fa-exclamation"
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/tornado.svg"
+							alt="Clouds"
+						/>
 					),
 					Clear: (
-						<i
-							style={{ color: "hsla(61, 100%, 47%, 1)" }}
-							className="fas fa-sun"
-						></i>
+						<img
+							style={{
+								width: "50px",
+								height: "50px",
+							}}
+							src="../weathericons/clear.svg"
+							alt="Clouds"
+						/>
 					),
 					Clouds: (
-						// <i
-						// 	style={{ color: "hsla(224, 0%, 15%, 1)" }}
-						// 	className="fas fa-cloud"
-						// ></i>
 						<img
 							style={{
 								width: "50px",
