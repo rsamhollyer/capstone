@@ -22,6 +22,7 @@ OpenWeather is a simple dataset that has plenty of endpoints for gathering many 
 ### Statistics
 
 Users want to be able to see as much pertinent data as possible when trying to use the drones, so I tried to accomodate this in my build. One of the first thigns I did was create a small, quick statistic panel that would allow users to see the 4 data points that my drones' flight data included. Now, if I had different data points then this panel would probably have been differently rendered or I would have included a way for users to choose what data they wanted to see.
+The panels also include color coded 'buttons' on the right that change when certain thresholds are met. This lets the user know if something is out of sorts or they should be alerted if they are too hot or too close to the ground.
 <br><br>
 
 ![Stats](readmeimages/stats.png)
@@ -30,3 +31,7 @@ Similarly, I wanted graphical data to be available to keep track of the data poi
 <br><br>
 
 ![Graphs](readmeimages/graph.png)
+
+### Drones
+
+The drones were not owned by me or data I created, but were given to my by someone else. Each of the 5 flight data is identical in structure ; a JSON object with a latitude, longitude, altitude, speed, temp, and duration key. I started streaming my flights to the dashboard from the front of the application, then gradually moved them to my Express server where they were axiosed in from the front. Finally I created a Postgres SQL database in Elephant SQL that held the data with a new custom key whiched named which drone flight it was. In the future, I want to add two more features to this app. First, I want to rebuild the backend to be a Websocket and Socket.IO server that streams flight data to the front. This way a user can see current flights in action. Second, I want to give users the ability to save the content of everyflight they make and load them up to play back historical flights for any reason.
