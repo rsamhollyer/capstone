@@ -8,6 +8,9 @@ const Map = (props) => {
 	const [mapStyle, setMapStyle] = useState(
 		"mapbox://styles/rsamhollyer/ckkprmd573gmw17mlcncjk8bz"
 	);
+
+	const [lastLoc, setLastLoc] = useState([]);
+
 	const { data, mapPoints } = props;
 
 	const [viewport, setViewport] = useState({
@@ -26,6 +29,10 @@ const Map = (props) => {
 			});
 		}
 	}, [data]);
+
+	useEffect(() => {
+		setLastLoc([...lastLoc, mapPoints]);
+	}, [mapPoints]);
 
 	return (
 		<div className="map-component">
@@ -54,6 +61,24 @@ const Map = (props) => {
 						</button>
 					</Marker>
 				)}
+				{lastLoc.length > 0
+					? lastLoc.map((loc) => {
+							return loc.lat ? (
+								<Marker latitude={loc.lat} longitude={loc.long}>
+									<button key={loc.key + " old"} className="marker-btn">
+										<img
+											style={{
+												width: "2px",
+												height: "2px",
+											}}
+											src={"/reddot.png"}
+											alt={"Drone Icon"}
+										/>
+									</button>
+								</Marker>
+							) : null;
+					  })
+					: null}
 			</ReactMapGL>
 			<div className="footer">
 				<button

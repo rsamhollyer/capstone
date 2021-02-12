@@ -74,7 +74,7 @@ function App() {
 			} else {
 				setIndex(0);
 			}
-		}, 250);
+		}, 100);
 		return () => {
 			clearInterval(interval);
 		};
