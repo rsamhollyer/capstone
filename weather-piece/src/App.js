@@ -10,6 +10,7 @@ import GraphComponent from "./Components/GraphComponent";
 import Map from "./Components/Map";
 
 function App() {
+	const [lastLoc, setLastLoc] = useState([]);
 	const [activeDrone, setActiveDrone] = useState();
 	const [weather, setWeather] = useState(null);
 	const [speedChartData, setSpeedChartData] = useState([{ x: 0, y: 0 }]);
@@ -90,6 +91,7 @@ function App() {
 				setMotorTempChartData={setMotorTempChartData}
 				setIndex={setIndex}
 				activeDrone={activeDrone}
+				setLastLoc={setLastLoc}
 			/>
 
 			<SingleStat
@@ -145,7 +147,12 @@ function App() {
 				graphTitle={`Motor Graph Comp.`}
 			/>
 
-			<Map data={data} mapPoints={mapPoints} />
+			<Map
+				data={data}
+				mapPoints={mapPoints}
+				lastLoc={lastLoc}
+				setLastLoc={setLastLoc}
+			/>
 			<Weather weather={weather} />
 		</main>
 	);

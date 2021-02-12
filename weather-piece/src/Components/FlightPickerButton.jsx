@@ -7,6 +7,7 @@ export default function FlightPickerButton(props) {
 		setIndex,
 		droneName,
 		activeDrone,
+		setLastLoc,
 	} = props;
 
 	return (
@@ -22,6 +23,7 @@ export default function FlightPickerButton(props) {
 				setAltChartData([{ x: 0, y: 0 }]);
 				setMotorTempChartData([{ x: 0, y: 0 }]);
 				setIndex(0);
+				setLastLoc([]);
 			}}
 		>
 			<span>{droneName}</span>

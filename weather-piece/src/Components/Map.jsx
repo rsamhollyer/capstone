@@ -9,9 +9,7 @@ const Map = (props) => {
 		"mapbox://styles/rsamhollyer/ckkprmd573gmw17mlcncjk8bz"
 	);
 
-	const [lastLoc, setLastLoc] = useState([]);
-
-	const { data, mapPoints } = props;
+	const { data, mapPoints, lastLoc, setLastLoc } = props;
 
 	const [viewport, setViewport] = useState({
 		latitude: 29.910577,

@@ -11,6 +11,8 @@ export default function FlightPicker(props) {
 		setMotorTempChartData,
 		setIndex,
 		activeDrone,
+		lastLoc,
+		setLastLoc,
 	} = props;
 
 	const getDroneNames = async () => {
@@ -36,6 +38,8 @@ export default function FlightPicker(props) {
 								setIndex={setIndex}
 								droneName={drone.droneName}
 								activeDrone={activeDrone}
+								lastLoc={lastLoc}
+								setLastLoc={setLastLoc}
 							/>
 						);
 				  })
