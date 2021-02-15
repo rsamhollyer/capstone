@@ -33,10 +33,6 @@ app.use(
 
 app.use(logger);
 
-app.get("/", (req, res) => {
-	res.send(`Hi Express`);
-});
-
 app.use("/api/weather", weatherRouter);
 app.use("/api/drones", droneRouter);
 
