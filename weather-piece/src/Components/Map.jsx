@@ -74,9 +74,7 @@ const Map = (props) => {
 										/>
 									</button>
 								</Marker>
-							) : (
-								marker.remove()
-							);
+							) : null;
 					  })
 					: null}
 			</ReactMapGL>
