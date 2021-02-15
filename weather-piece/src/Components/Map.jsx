@@ -62,7 +62,7 @@ const Map = (props) => {
 				{lastLoc.length > 0
 					? lastLoc.map((loc) => {
 							return loc.lat ? (
-								<Marker latitude={loc.lat} longitude={loc.long}>
+								<Marker latitude={loc.lat} longitude={loc.long} offsetLeft={8}>
 									<button key={loc.key + " old"} className="marker-btn">
 										<img
 											style={{
@@ -74,7 +74,9 @@ const Map = (props) => {
 										/>
 									</button>
 								</Marker>
-							) : null;
+							) : (
+								marker.remove()
+							);
 					  })
 					: null}
 			</ReactMapGL>
