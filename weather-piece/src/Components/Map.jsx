@@ -1,5 +1,4 @@
-import ReactMapGL, { Marker, Layer } from "react-map-gl";
-// import MapStyleButton from "./MapStyleButton";
+import ReactMapGL, { Marker } from "react-map-gl";
 import { config } from "../Config/config";
 import { useState, useEffect } from "react";
 
