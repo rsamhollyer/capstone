@@ -1,7 +1,10 @@
 import ReactMapGL, { Marker } from "react-map-gl";
 import { config } from "../Config/config";
 import { useState, useEffect } from "react";
-
+import "mapbox-gl/dist/mapbox-gl.css";
+import mapboxgl from "mapbox-gl";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 const Map = (props) => {
 	const [activeStyle, setActiveStyle] = useState("Monochrome");
 	const [mapStyle, setMapStyle] = useState(
@@ -125,30 +128,6 @@ const Map = (props) => {
 				>
 					Outdoors
 				</button>
-				{/* <MapStyleButton
-					key={1}
-					stylename={"Monochrone"}
-					stylelink={"mapbox://styles/rsamhollyer/ckkprmd573gmw17mlcncjk8bz"}
-					setMapStyle={setMapStyle}
-					setActiveStyle={setActiveStyle}
-					activeStyle={activeStyle}
-				/>
-				<MapStyleButton
-					key={2}
-					stylename={"Satellite"}
-					stylelink={"mapbox://styles/rsamhollyer/ckkprljfz7xoi17mjo6asbeub"}
-					setMapStyle={setMapStyle}
-					setActiveStyle={setActiveStyle}
-					activeStyle={activeStyle}
-				/>
-				<MapStyleButton
-					key={3}
-					stylename={"Outdoors"}
-					stylelink={"mapbox://styles/rsamhollyer/ckkn1mivy5aml17mnueua6ovj"}
-					setMapStyle={setMapStyle}
-					setActiveStyle={setActiveStyle}
-					activeStyle={activeStyle}
-				/> */}
 			</div>
 		</div>
 	);
